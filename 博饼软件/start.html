@@ -1,0 +1,73 @@
+<HTML>
+
+    
+
+	<HEAD>
+		<TITLE>New Document </TITLE>
+		<link rel="stylesheet" href="start.css">
+		<SCRIPT LANGUAGE="JavaScript">
+            var $btn = document.querySelector('.btn');
+
+            $btn.addEventListener('click', e => {
+            window.requestAnimationFrame(() => {
+            $btn.classList.remove('is-animating');
+
+            window.requestAnimationFrame(() => {
+            $btn.classList.add('is-animating');
+        });
+    });
+});
+
+		</SCRIPT>
+	</HEAD>
+    
+    <script>
+        window.onload = function(){ 
+             var audio = document.getElementById('music');
+                
+        }
+        function play() {
+            var audio = document.getElementById('music');
+            if (audio.paused) {
+                audio.play();
+                document.getElementById('musicImg').src="音乐.png";
+            }else{
+                audio.pause();
+                audio.currentTime = 0;//音乐从头播放
+                document.getElementById('musicImg').src="音乐.png";
+            }
+        }
+    </script>	
+
+
+
+	<BODY id="bd">
+		<p class="yuebing1">
+		    <img src="./image/月饼1.png" width="128" height="128" />
+		</p>
+        <p class="zhongqiu">
+		    <img src="./image/中秋博饼标题.png"/>
+		</p>
+        <a href="./rule.html">
+        <p class="guize">
+		    <img src="./image/游戏规则按钮.png"/>
+		</p>
+        </a>
+
+		
+        <a href="./switch.html">
+		<p class="start">
+		    <img src="./image/开始游戏按钮.png"/>
+		</p>
+        </a>
+        <!-- partial -->
+        <script src="./script.js"></script>
+
+        <p class="yinyue">
+		<audio id="music" src="小旭音乐 - 欢乐斗地主主界面音乐.mp3" loop autoplay></audio>
+        <img src="音乐.png" onClick="play()" alt="user" width="100" height="100"> 
+		</p>
+        
+	</BODY>
+</HTML>
+

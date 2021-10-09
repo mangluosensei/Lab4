@@ -1,0 +1,43 @@
+*{
+    user-select: none;
+}
+
+body{
+    background:url(./image/背景switch.jpg)
+    no-repeat;
+    background-size:100% 100%;
+    background-attachment: fixed;
+}
+
+.wan{
+    position: absolute;
+    margin-left: 580px;
+    margin-top: 450px;
+}
+
+.yuebing{
+    position: absolute;
+}
+
+.yinyue{
+    position: absolute;
+    margin-left: 1400px;
+}
+  
+.duoren{
+    position: absolute;
+    margin-left: 610px;
+    margin-top: 120px;
+}
+
+.danren{
+    position: absolute;
+    margin-left: 610px;
+    margin-top: 220px;
+}
+
+.guize{
+    position: absolute;
+    margin-left: 610px;
+    margin-top: 320px;
+}

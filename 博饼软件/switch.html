@@ -1,0 +1,78 @@
+<HTML>
+
+    
+
+	<HEAD>
+		<TITLE>New Document </TITLE>
+		<link rel="stylesheet" href="switch.css">
+		<SCRIPT LANGUAGE="JavaScript">
+
+
+
+
+		</SCRIPT>
+	</HEAD>
+	
+
+	<script>
+        window.onload = function(){ 
+             var audio = document.getElementById('music');
+                
+        }
+        function play() {
+            var audio = document.getElementById('music');
+            if (audio.paused) {
+                audio.play();
+                document.getElementById('musicImg').src="音乐.png";
+            }else{
+                audio.pause();
+                audio.currentTime = 0;//音乐从头播放
+                document.getElementById('musicImg').src="音乐.png";
+            }
+        }
+    </script>
+
+
+
+
+	<BODY id="bd" >
+        <p class="yuebing">
+            <a href="./start.html">
+		    <img src="./image/月饼1.png" width="128" height="128"/>
+            </a>
+		</p>
+
+		<p class="duoren">
+            <a href="./index.html">
+		    <img src="./image/单人游戏按钮.png"/>
+            </a>
+		</p>
+        <p class="danren">
+            <a href="./index1.html">
+		    <img src="./image/多人游戏按钮.png"/>
+            </a>
+		</p>
+        <p class="guize">
+            <a href="rule.html">
+		    <img src="./image/游戏规则按钮.png"/>
+            </a>
+		</p>
+        <p class="wan">
+		    <img src="./image/碗.gif" width="350" height="280"/>
+		</p>
+
+        <p class="yinyue">
+            <audio id="music" src="小旭音乐 - 欢乐斗地主主界面音乐.mp3" loop autoplay></audio>
+            <img src="音乐.png" onClick="play()" alt="user" width="100" height="100"> 
+         </p>
+
+		
+		
+
+		
+		
+
+		
+	</BODY>
+</HTML>
+

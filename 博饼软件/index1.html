@@ -1,0 +1,202 @@
+<HTML>
+
+    <style>
+		h1{color: white;}
+	</style>
+
+	<HEAD>
+		<TITLE>New Document </TITLE>
+		<link rel="stylesheet" href="index.css">
+		<SCRIPT LANGUAGE="JavaScript">
+	var num1 = prompt("请输入游戏人数：");
+
+
+var flagtime;
+var oldinner;
+var flag=1;
+var num;
+var str1 = new String(6);
+var count=0;
+num=new Array(6);
+function init()
+{
+oldinner=bd.innerHTML;
+}
+function start()
+{
+    if(count==num1){
+
+	}
+	else if(flag==1)
+         {
+			fun();
+			flag=0;
+			}
+     else
+		{
+			fun2();
+			flag=1;
+			}
+}
+function fun()
+{
+		var arr;
+		arr=new Array(6);
+		 for(var i=0;i<6;i++)
+			 num[i]=0;
+	    for(var i=0;i<6;i++)
+	    {
+			arr[i]=Math.floor(Math.random()*6+1);
+			num[arr[i]-1]++;
+			}
+		pic1.src="image/"+arr[0]+".png";
+		pic2.src="image/"+arr[1]+".png";
+		pic3.src="image/"+arr[2]+".png";
+		pic4.src="image/"+arr[3]+".png";
+		pic5.src="image/"+arr[4]+".png";
+		pic6.src="image/"+arr[5]+".png";
+		flagtime=setTimeout("fun()",50);
+		
+}
+function fun2()
+{
+		
+    var sijin=0;
+	window.clearTimeout(flagtime);
+	count+=1;
+	if(num[3]>=4)
+	{
+			if(num[3]==6)
+				bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到状元：六杯红！</h1>";
+			else if(num[0]==2)
+				bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到状元：金花！</h1>";
+			else if(num[3==5])
+			    bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到状元：五红！</h1>";
+			else
+				bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到状元：四点红！</h1>";
+		}
+		else if(num[0]==6){
+			bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到状元：遍地锦！</h1>";
+		}
+		else if(num[1]==6||num[2]==6||num[4]==6||num[5]==6){
+            bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到状元：六杯黑！</h1>";
+		}
+		else if(num[4]==5){
+            bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到状元：五子登科！</h1>";
+		}
+		else
+		{
+			for(var i=0;i<6;i++)
+			{
+				if(num[i]==4)
+				sijin=1;
+				}
+				if(sijin==1)
+				bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到进士：四进！</h1>";
+				else if(num[0]==1&&num[1]==1&&num[2]==1&&num[3]==1&&num[4]==1&&num[5]==1)
+				bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到榜眼：对堂！</h1>";
+				else if(num[3]==3)
+				bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到探花：三红！</h1>";
+				else if(num[3]==2)
+				bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到举人：二举！</h1>";
+				else if(num[3]==1)
+				bd1.innerHTML+="<h1>恭喜玩家"+count+"抽到秀才：一秀！</h1>";
+				else
+				bd1.innerHTML+="<h1>很遗憾，玩家"+count+"只抽到了寂寞！</h1>";
+				
+
+			}	
+	
+}
+var $btn = document.querySelector('.btn');
+
+            $btn.addEventListener('click', e => {
+            window.requestAnimationFrame(() => {
+            $btn.classList.remove('is-animating');
+
+            window.requestAnimationFrame(() => {
+            $btn.classList.add('is-animating');
+        });
+    });
+});
+
+		</SCRIPT>
+	</HEAD>
+	<script>
+        window.onload = function(){ 
+             var audio = document.getElementById('music');
+                
+        }
+        function play() {
+            var audio = document.getElementById('music');
+            if (audio.paused) {
+                audio.play();
+                document.getElementById('musicImg').src="音乐.png";
+            }else{
+                audio.pause();
+                audio.currentTime = 0;//音乐从头播放
+                document.getElementById('musicImg').src="音乐.png";
+            }
+        }
+    </script>
+	<BODY id="bd" onload="init()"  >
+		
+		<p class="yuebing1">
+		    <img src="./image/月饼.png" width="128" height="128" />
+		</p>
+		<p class="yuebing2">
+			<img src="./image/月饼.png" width="128" height="128" />
+		</p>
+		<p class="yuebing">
+			<a href="./switch.html">
+			<img src="./image/月饼1.png" width="128" height="128" />
+			</a>
+		</p>
+
+		<p class="yinyue">
+            <audio id="music" src="小旭音乐 - 欢乐斗地主主界面音乐.mp3" loop autoplay></audio>
+            <img src="音乐.png" onClick="play()" alt="user" width="100" height="100"> 
+         </p>
+		
+		<table class="bd1" id=bd1>
+			
+		</table>
+		<button class="btn" onclick="start()" alt="user">
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="text">博饼开始/停止!</span>
+		</button>
+		<!-- partial -->
+		<script src="./script.js"></script>
+
+		
+
+
+
+		<div align="center">
+			
+			<table class="touzi" width="30%" border="10" cellspacing="10" cellpadding="0">
+				<tr>
+					<td width="16%"><img id="pic1" src="image/1.png" width="100" height="100"></td>
+					<td width="29%"><img id="pic2" src="image/2.png" width="100" height="100"></td>
+					<td width="17%"><img id="pic3" src="image/3.png" width="100" height="100"></td>
+					<td width="2%"><img id="pic4" src="image/4.png" width="100" height="100"></td>
+					<td width="16%"><img id="pic5" src="image/5.png" width="100" height="100"></td>
+					<td width="20%"><img id="pic6" src="image/6.png" width="100" height="100"></td>
+				</tr>
+			</table>
+		</div>
+
+		
+		
+
+		
+	</BODY>
+</HTML>
+
